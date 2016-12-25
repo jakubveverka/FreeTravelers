@@ -1,15 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using Xamarin.Forms;
 
 namespace FreeTravelers
 {
-	public partial class MyPage : ContentPage
+	public partial class MenuPage : ContentPage
 	{
-		public MyPage()
+		public ListView ListView { get { return listView; } }
+
+		public MenuPage()
 		{
 			InitializeComponent();
+
+			var menuPageItems = new List<TextCell>();
+			menuPageItems.Add(new TextCell
+			{
+				Text = "Contacts"
+			});
+
+			listView.ItemsSource = menuPageItems;
 		}
 	}
 }

@@ -2,11 +2,24 @@
 
 namespace FreeTravelers
 {
-	public partial class FreeTravelersPage : ContentPage
+	public class FreeTravelersPage : MasterDetailPage
 	{
 		public FreeTravelersPage()
 		{
-			InitializeComponent();
+			var masterPage = new MenuPage();
+			Master = masterPage;
+			Detail = new NavigationPage(new ToursPage());
+
+			masterPage.ListView.ItemSelected += OnItemSelected;
+		}
+
+		void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+		{
+			var item = e.SelectedItem as TextCell;
+			if (item != null)
+			{
+				
+			}
 		}
 	}
 }
