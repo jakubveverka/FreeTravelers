@@ -12,10 +12,29 @@ namespace FreeTravelers
 		{
 			InitializeComponent();
 
-			var menuPageItems = new List<TextCell>();
-			menuPageItems.Add(new TextCell
+			var menuPageItems = new List<MenuItem>();
+			menuPageItems.Add(new MenuItem
 			{
-				Text = "Contacts"
+				Text = "Tours",
+				TargetType = typeof(ToursPage)
+			});
+			menuPageItems.Add(new MenuItem
+			{
+				Text = "Create tour",
+				TargetType = typeof(CreateTourPage)
+			});
+			menuPageItems.Add(new MenuItem
+			{
+				Text = "Account",
+				TargetType = typeof(AccountPage)
+			});
+			menuPageItems.Add(new MenuItem
+			{
+				Text = "About us"
+			});
+			menuPageItems.Add(new MenuItem
+			{
+				Text = "About app"
 			});
 
 			listView.ItemsSource = menuPageItems;
